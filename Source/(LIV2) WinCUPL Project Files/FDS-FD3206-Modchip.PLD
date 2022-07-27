@@ -1,0 +1,24 @@
+Name     FD3206 No-Wire Open Source FDS Mod ;
+PartNo   00 ;
+Date     27/07/2022 ;
+Revision 01 ;
+Designer LIV2 ;
+Company  BetterBit ;
+Assembly None ;
+Location  ;
+Device   g16v8ms ;
+
+/* *************** INPUT PINS *********************/
+PIN 1 = write_data                ;
+PIN 3 = ready                     ;
+PIN 4 = write_protect             ;
+PIN 5 = write_gate                ;
+/* *************** OUTPUT PINS *********************/
+PIN 14 = Q                     ;
+PIN 12 = !write_head_1         ;
+PIN 13 = !write_head_2         ;
+
+Q.d = !Q;
+
+write_head_1 = !Q & !ready & !write_protect & !write_gate;
+write_head_2 = Q & !ready & !write_protect & !write_gate;

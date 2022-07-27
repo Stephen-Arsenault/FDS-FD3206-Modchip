@@ -1,0 +1,37 @@
+LISTING FOR LOGIC DESCRIPTION FILE: NAME.pld                         Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Jul 27 11:53:04 2022
+
+  1:Name     FD3206 No-Wire Open Source FDS Mod ;
+  2:PartNo   00 ;
+  3:Date     27/07/2022 ;
+  4:Revision 01 ;
+  5:Designer LIV2 ;
+  6:Company  BetterBit ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8ms ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1 = write_data                ;
+ 13:PIN 3 = ready                     ;
+ 14:PIN 4 = write_protect             ;
+ 15:PIN 5 = write_gate                ;
+ 16:/* *************** OUTPUT PINS *********************/
+ 17:PIN 14 = Q                     ;
+ 18:PIN 12 = !write_head_1         ;
+ 19:PIN 13 = !write_head_2         ;
+ 20:
+ 21:Q.d = !Q;
+ 22:
+ 23:write_head_1 = !Q & !ready & !write_protect & !write_gate;
+ 24:write_head_2 = Q & !ready & !write_protect & !write_gate;
+ 25:
+
+
+
+Jedec Fuse Checksum       (1b3d)
+Jedec Transmit Checksum   (9bb1)

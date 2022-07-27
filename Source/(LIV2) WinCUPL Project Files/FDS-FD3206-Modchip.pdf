@@ -1,0 +1,131 @@
+{COMPONENT C:\PROGRAM FILES\WINCUPL\WINCUPL\NAME.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Wed Jul 27 11:53:04 2022 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P WRITE_DA {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P READY {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P WRITE_PR {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P WRITE_GA {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P Q {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P WRITE_1' {Pt "I/O"}{Lq 0}{Ploc 350 20}}
+   {P WRITE_2' {Pt "I/O"}{Lq 0}{Ploc 350 40}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 225 150}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 130}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 330 30}
+   {Pnl 330 50}
+
+   {Sd A 1 3 4 5 14 12 13}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 140 320 0}
+   {L 130 120 100 120}
+   {L 130 130 140 120 130 110}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {C 325 20 5}
+   {L 330 20 350 20}
+   {C 325 40 5}
+   {L 330 40 350 40}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "WRITE_DA" 140 120}
+   {T "READY" 140 80}
+   {T "WRITE_PR" 140 60}
+   {T "WRITE_GA" 140 40}
+   {T "Q" 140 20}
+   [Tj "RC"]
+   {T "WRITE_1'" 310 20}
+   {T "WRITE_2'" 310 40}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G16V8MS" 225 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\PROGRAM FILES\WINCUPL\WINCUPL\NAME 225 140}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N WRITE_DA
+   }
+   {N READY
+   }
+   {N WRITE_PR
+   }
+   {N WRITE_GA
+   }
+   {N Q
+   }
+   {N WRITE_1'
+   }
+   {N WRITE_2'
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

@@ -1,0 +1,53 @@
+LISTING FOR LOGIC DESCRIPTION FILE: FD3206 MOD.pld                   Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Jul 27 12:46:15 2022
+
+  1:Name     3602 Write Enabler ;
+  2:PartNo   00 ;
+  3:Date     7/24/2022 ;
+  4:Revision 01 ;
+  5:Designer Stephen ;
+  6:Company  BetterBit ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8ms;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN   1 = CLK                     ; /* Clock              */ 
+ 13:PIN   4 = WRTGATE                 ; /* Write Gate         */ 
+ 14:PIN   5 = WRTPRTCT                ; /* Write Protect      */ 
+ 15:PIN   6 = WRTDATA                 ; /* Write Data         */ 
+ 16:PIN  13 = READY                   ; /* Ready              */ 
+ 17:
+ 18:/* *************** OUTPUT PINS *********************/
+ 19:PIN  14 = WRTHD1                  ; /* Write Head 1       */ 
+ 20:PIN  15 = WRTHD2                  ; /* Write Head 2       */ 
+ 21:PIN  19 = !CLKOUT                 ; /* Clock Invert       */
+ 22:
+ 23:/* ***************** Braining **********************/
+ 24:/* - Write Data toggles flip flop.                        */
+ 25:/* - Flip flop enters either a high or low output state   */
+ 26:/* - Output state maps to "A" position on 74LS45          */                                           
+ 27:/* - "Ready" maps to "B" position on 74LS45               */
+ 28:/* - "Write Protect" maps to "C" position on 74LS45       */
+ 29:/* - "Write Gate" maps to "D" position on 74LS45          */
+ 30:/*                                                        */
+ 31:/*        74LS45 TRUTH TABLE                              */
+ 32:/*     -------------------------                          */
+ 33:/*    | A | B | C | D | 01 | 02 |                         */
+ 34:/*    | L | L | L | L | L  | H  |                         */
+ 35:/*    | H | L | L | L | H  | L  |                         */
+ 36:/*     -------------------------                          */
+ 37:
+ 38:
+ 39:
+ 40:
+ 41:CLKOUT = !CLK ;
+ 42:
+ 43:WRTHD1.d = CLKOUT &  WRTDATA & !WRTGATE & !WRTPRTCT & !READY ;
+ 44:WRTHD2.d = CLKOUT & !WRTDATA & !WRTGATE & !WRTPRTCT & !READY ;
+ 45:
+

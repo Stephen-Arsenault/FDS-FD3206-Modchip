@@ -1,0 +1,30 @@
+%SIGNAL
+PIN  14 =  Q 
+PIN   3 =  ready 
+PIN   1 =  write_data 
+PIN   5 =  write_gate 
+PIN  12 = !write_head_1 
+PIN  13 = !write_head_2 
+PIN   4 =  write_protect 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+Q.d  =>
+    !Q
+
+write_head_1 =>
+    !Q & !ready & !write_gate & !write_protect
+
+write_head_2 =>
+    Q & !ready & !write_gate & !write_protect
+
+write_head_1.oe  =>
+    1 
+
+write_head_2.oe  =>
+    1 
+
+%END

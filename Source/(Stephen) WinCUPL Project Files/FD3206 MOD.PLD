@@ -1,0 +1,44 @@
+Name     3602 Write Enabler ;
+PartNo   00 ;
+Date     7/24/2022 ;
+Revision 01 ;
+Designer Stephen ;
+Company  BetterBit ;
+Assembly None ;
+Location  ;
+Device   g16v8ms;
+
+/* *************** INPUT PINS *********************/
+PIN   1 = CLK                     ; /* Clock              */ 
+PIN   4 = WRTGATE                 ; /* Write Gate         */ 
+PIN   5 = WRTPRTCT                ; /* Write Protect      */ 
+PIN   6 = WRTDATA                 ; /* Write Data         */ 
+PIN  13 = READY                   ; /* Ready              */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN  14 = WRTHD1                  ; /* Write Head 1       */ 
+PIN  15 = WRTHD2                  ; /* Write Head 2       */ 
+PIN  19 = !CLKOUT                 ; /* Clock Invert       */
+
+/* ***************** Braining **********************/
+/* - Write Data toggles flip flop.                        */
+/* - Flip flop enters either a high or low output state   */
+/* - Output state maps to "A" position on 74LS45          */                                           
+/* - "Ready" maps to "B" position on 74LS45               */
+/* - "Write Protect" maps to "C" position on 74LS45       */
+/* - "Write Gate" maps to "D" position on 74LS45          */
+/*                                                        */
+/*        74LS45 TRUTH TABLE                              */
+/*     -------------------------                          */
+/*    | A | B | C | D | 01 | 02 |                         */
+/*    | L | L | L | L | L  | H  |                         */
+/*    | H | L | L | L | H  | L  |                         */
+/*     -------------------------                          */
+
+
+
+
+CLKOUT = !CLK ;
+
+WRTHD1.d = CLKOUT &  WRTDATA & !WRTGATE & !WRTPRTCT & !READY ;
+WRTHD2.d = CLKOUT & !WRTDATA & !WRTGATE & !WRTPRTCT & !READY ;

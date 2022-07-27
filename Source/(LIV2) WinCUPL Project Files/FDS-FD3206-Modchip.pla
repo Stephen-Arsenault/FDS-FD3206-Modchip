@@ -1,0 +1,27 @@
+# Berkeley PLA format generated using
+#
+# CUPL(WM)        5.0a Serial# 60008009
+# Device          g16v8ms  Library DLIB-h-40-11
+# Created         Wed Jul 27 11:53:04 2022
+# Name            FD3206 No-Wire Open Source FDS Mod 
+# Partno          00 
+# Revision        01 
+# Date            27/07/2022 
+# Designer        LIV2 
+# Company         BetterBit 
+# Assembly        None 
+# Location        
+#
+# Inputs  1 Q ready write_data 
+#         write_gate !write_head_1 !write_head_2 write_protect 
+# Outputs Q.d !write_head_1 !write_head_2 write_head_1.oe 
+#         write_head_2.oe 
+.i 8
+.o 5
+.p 5
+-0------ 1~~~~
+-00-0--0 ~1~~~
+-10-0--0 ~~1~~
+1------- ~~~1~
+1------- ~~~~1
+.end
