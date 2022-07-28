@@ -2,7 +2,7 @@
 # FDS FD3206 Modchip <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
 A simple "no-wire" modchip for the Nintendo Famicom Disk System HVC-022 Disk Drive. This modchip reverses copy-protection restrictions applied by the Mitsumi FD3206 chip.
 
-<img src="./Images/FD3206.jpg" title="Unmodified Quick Disk FD3206 Disk Controller" alt="Unmodified Quick Disk FD3206 Disk Controller" style="display: inline-block; margin: 0 auto; max-width: 300px"> <img src="./Images/FD3206_MOD.jpg" title="Modified Quick Disk FD3206 Disk Controller" alt="Modified Quick Disk FD3206 Disk Controller" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="./Images/FD3206.jpg" title="Unmodified Quick Disk FD3206 Disk Controller" alt="Unmodified Quick Disk FD3206 Disk Controller" style="display: inline-block; margin: 0 auto; width: 300px;"> <img src="./Images/FD3206_MOD.jpg" title="Modified Quick Disk FD3206 Disk Controller" alt="Modified Quick Disk FD3206 Disk Controller" style="display: inline-block; margin: 0 auto; width: 300px;">
 
 ## Installation
  1. Start by disassembling your FDS HVC-022.
