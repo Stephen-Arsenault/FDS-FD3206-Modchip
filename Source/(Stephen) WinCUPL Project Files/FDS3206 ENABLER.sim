@@ -1,0 +1,41 @@
+%SIGNAL
+PIN  12 =  Q 
+PIN   1 =  clk 
+PIN  13 =  ready 
+PIN  19 =  write_clk 
+PIN   6 =  write_data 
+PIN   4 =  write_gate 
+PIN  15 = !write_head_1 
+PIN  14 = !write_head_2 
+PIN   5 =  write_protect 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+Q.d  =>
+    !Q
+
+write_clk =>
+    !write_data
+
+write_head_1 =>
+    !Q & !ready & !write_gate & !write_protect
+
+write_head_2 =>
+    Q & !ready & !write_gate & !write_protect
+
+ready.oe  =>
+    0 
+
+write_clk.oe  =>
+    1 
+
+write_head_1.oe  =>
+    1 
+
+write_head_2.oe  =>
+    1 
+
+%END

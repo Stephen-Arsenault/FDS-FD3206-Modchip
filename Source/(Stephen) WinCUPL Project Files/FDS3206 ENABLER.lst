@@ -1,0 +1,41 @@
+LISTING FOR LOGIC DESCRIPTION FILE: FDS3206 ENABLER.pld              Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Jul 27 20:03:41 2022
+
+  1:Name     FDS3206 Enabler;
+  2:PartNo   00 ;
+  3:Date     27/07/2022 ;
+  4:Revision 01 ;
+  5:Designer Stephen;
+  6:Company  BetterBit ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8ms ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN  1 = clk                       ;
+ 13:PIN 13 = ready                     ;
+ 14:PIN  5 = write_protect             ;
+ 15:PIN  4 = write_gate                ;
+ 16:PIN  6 = write_data                ;
+ 17:
+ 18:/* *************** OUTPUT PINS *********************/
+ 19:PIN 12 = Q                     ;
+ 20:PIN 15 = !write_head_1         ;
+ 21:PIN 14 = !write_head_2         ;
+ 22:PIN 19 = write_clk             ;
+ 23:
+ 24:Q.d = !Q;
+ 25:write_clk = !write_data;
+ 26:
+ 27:write_head_1 = !Q & !ready & !write_protect & !write_gate;
+ 28:write_head_2 = Q & !ready & !write_protect & !write_gate;
+ 29:
+
+
+
+Jedec Fuse Checksum       (2364)
+Jedec Transmit Checksum   (a67e)
